@@ -121,7 +121,7 @@ def render_anomaly_feed(tick_h: list, cyber_h: list,
     layout = _base("anomaly_scores.live", yr=[0, 1.05])
     layout["height"] = 268
     fig.update_layout(**layout)
-    st.plotly_chart(fig, use_container_width=True,
+    st.plotly_chart(fig, width="stretch",
                     config={"displayModeBar": False})
 
 
@@ -169,7 +169,7 @@ def render_correlation(tick_h: list, corr_h: list) -> None:
     layout = _base("coupling_correlation.live", yr=[-0.15, 1.15])
     layout["height"] = 268
     fig.update_layout(**layout)
-    st.plotly_chart(fig, use_container_width=True,
+    st.plotly_chart(fig, width="stretch",
                     config={"displayModeBar": False})
 
 
@@ -211,7 +211,7 @@ def render_gauge(corr: float, alert: str) -> None:
         margin=dict(l=16, r=16, t=20, b=8),
         height=238
     )
-    st.plotly_chart(fig, use_container_width=True,
+    st.plotly_chart(fig, width="stretch",
                     config={"displayModeBar": False})
 
 
@@ -252,7 +252,7 @@ def render_ids_comparison(alert_h: list, ids_log: list) -> None:
                                  range=[0, max(i_det, s_det, 1) + 5],
                                  tickfont=dict(size=8))
     fig.update_layout(**layout)
-    st.plotly_chart(fig, use_container_width=True,
+    st.plotly_chart(fig, width="stretch",
                     config={"displayModeBar": False})
 
 
@@ -284,7 +284,7 @@ def render_alert_heatmap(alert_h: list, tick_h: list) -> None:
     layout["yaxis"]  = dict(showgrid=False, zeroline=False,
                              showticklabels=False)
     fig.update_layout(**layout)
-    st.plotly_chart(fig, use_container_width=True,
+    st.plotly_chart(fig, width="stretch",
                     config={"displayModeBar": False})
 
 
@@ -333,7 +333,7 @@ def render_scatter_phase(cyber_h: list, phys_h: list,
         title=dict(text="Physical Score",
                    font=dict(size=8, family=MONO, color=FC)))
     fig.update_layout(**layout)
-    st.plotly_chart(fig, use_container_width=True,
+    st.plotly_chart(fig, width="stretch",
                     config={"displayModeBar": False})
 
 
@@ -368,5 +368,5 @@ def render_score_histogram(cyber_h: list, phys_h: list) -> None:
         title=dict(text="Score", font=dict(size=8, family=MONO, color=FC))
     )
     fig.update_layout(**layout)
-    st.plotly_chart(fig, use_container_width=True,
+    st.plotly_chart(fig, width="stretch",
                     config={"displayModeBar": False})
